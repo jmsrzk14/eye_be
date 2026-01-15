@@ -47,7 +47,7 @@ func main() {
 	AllowOrigins: []string{
         "http://localhost:3000",
         "https://eye-disease-detection25.vercel.app"
-    },
+    }
 	config.AllowCredentials = true
 	config.AllowHeaders = append(config.AllowHeaders, "Authorization", "Content-Type")
 	config.AllowMethods = []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"}
