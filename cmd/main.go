@@ -42,15 +42,20 @@ func main() {
 	// Create a new Gin router
 	router := gin.Default()
 
-	// Configure CORS
-	config := cors.DefaultConfig()
-	AllowOrigins: []string{
-        "http://localhost:3000",
-        "https://eye-disease-detection25.vercel.app",
-    }
-	config.AllowCredentials = true
-	config.AllowHeaders = append(config.AllowHeaders, "Authorization", "Content-Type")
-	config.AllowMethods = []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"}
+	config := cors.Config{
+	    AllowOrigins: []string{
+	        "http://localhost:3000",
+	        "https://eye-disease-detection25.vercel.app",
+	    },
+	    AllowMethods: []string{
+	        "GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS",
+	    },
+	    AllowHeaders: []string{
+	        "Origin", "Content-Type", "Authorization",
+	    },
+	    AllowCredentials: true,
+	}
+
 	router.Use(cors.New(config))
 
 	// Register authentication routes
