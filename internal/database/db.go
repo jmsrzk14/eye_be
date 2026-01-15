@@ -21,12 +21,12 @@ func Initialize() {
 	var err error
 
 	// Ambil konfigurasi dari environment variables
-	host := os.Getenv("DB_HOST")
-	port := os.Getenv("DB_PORT")
-	user := os.Getenv("DB_USER")
-	password := os.Getenv("DB_PASSWORD")
-	dbname := os.Getenv("DB_NAME")
-	sslmode := os.Getenv("DB_SSLMODE") // Supabase biasanya "require"
+	host := os.Getenv("PGHOST")
+	port := os.Getenv("PGPORT")
+	user := os.Getenv("PGUSER")
+	password := os.Getenv("PGPASSWORD")
+	dbname := os.Getenv("PGNAME")
+	sslmode := os.Getenv("PGSSLMODE") // Supabase biasanya "require"
 
 	// Pastikan semua variabel environment sudah ada
 	if host == "" || port == "" || user == "" || password == "" || dbname == "" || sslmode == "" {
