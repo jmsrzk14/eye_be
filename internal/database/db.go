@@ -25,7 +25,7 @@ func Initialize() {
 	port := os.Getenv("PGPORT")
 	user := os.Getenv("PGUSER")
 	password := os.Getenv("PGPASSWORD")
-	dbname := os.Getenv("PGNAME")
+	dbname := os.Getenv("PGDATABASE")
 	sslmode := "require"
 
 	// Pastikan semua variabel environment sudah ada
