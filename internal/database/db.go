@@ -26,7 +26,7 @@ func Initialize() {
 	user := os.Getenv("PGUSER")
 	password := os.Getenv("PGPASSWORD")
 	dbname := os.Getenv("PGNAME")
-	sslmode := os.Getenv("PGSSLMODE") // Supabase biasanya "require"
+	sslmode := require
 
 	// Pastikan semua variabel environment sudah ada
 	if host == "" || port == "" || user == "" || password == "" || dbname == "" || sslmode == "" {
