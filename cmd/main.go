@@ -46,7 +46,7 @@ func main() {
 	config := cors.DefaultConfig()
 	AllowOrigins: []string{
         "http://localhost:3000",
-        "https://eye-disease-detection25.vercel.app"
+        "https://eye-disease-detection25.vercel.app",
     }
 	config.AllowCredentials = true
 	config.AllowHeaders = append(config.AllowHeaders, "Authorization", "Content-Type")
