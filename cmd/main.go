@@ -62,12 +62,14 @@ func main() {
 	router.POST("/api/auth/login", handlers.Login)
 
 	// Start the server
-	port := utils.GetEnvWithDefault("SERVER_PORT", "9090")
-
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "9090" // untuk local
+	}
+	
 	log.Printf("Server berjalan di port %s", port)
 	err = router.Run(":" + port)
 	if err != nil {
 		log.Fatalf("Gagal memulai server: %v", err)
-		os.Exit(1)
 	}
 }
